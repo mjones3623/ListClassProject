@@ -102,7 +102,7 @@ namespace UnitTestProject1
         public void Location_Of_Fifth_Added_Value()
         {
             //Arrange
-            CustomList<string> myList = new CustomList<string>();
+            CustomList<int> myList = new CustomList<int>();
 
             int value1 = 0;
             int value2 = 1;
@@ -127,7 +127,7 @@ namespace UnitTestProject1
         public void Location_Of_3rd_Of_FiveAddedValues()
         {
             //Arrange
-            CustomList<string> myList = new CustomList<string>();
+            CustomList<int> myList = new CustomList<int>();
 
             int value1 = 0;
             int value2 = 1;
@@ -197,7 +197,7 @@ namespace UnitTestProject1
             int number2 = 5;
             
             int expected = 5;
-            int actaul;
+            int actual;
 
 
             //Act
@@ -231,7 +231,7 @@ namespace UnitTestProject1
         public void Remove_Nonexistent_Int()
         {
             //Arrange
-            CustomList<string> myList = new CustomList<string>();
+            CustomList<int> myList = new CustomList<int>();
             int number1 = 5;
             int number2 = 5;
             int number3 = 5;
@@ -248,7 +248,7 @@ namespace UnitTestProject1
                 
             myList.Remove(number5);
 
-            actaul = myList.Count;
+            actual = myList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -257,7 +257,7 @@ namespace UnitTestProject1
         public void Expected_ListCapacity_of_5_Object_List()
         {
             //Arrange
-            CustomList<string> myList = new CustomList<string>();
+            CustomList<int> myList = new CustomList<int>();
             int one = 1;
             int two = 2;
             int three = 3;
@@ -274,7 +274,7 @@ namespace UnitTestProject1
             myList.Add(four);
             myList.Add(five);
 
-            string actual = myList.Capacity;
+            int actual = myList.Capacity;
 
             //Assert
             Assert.AreEqual(expected, actual);
