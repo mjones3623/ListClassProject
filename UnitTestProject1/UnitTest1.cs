@@ -161,6 +161,7 @@ namespace UnitTestProject1
 
 
         //Remove Method Unit Tests///////////////////////////////////////////////
+        [TestMethod]
         public void Remove_OneInt_CountReduction()
         {
             //Arrange
@@ -179,6 +180,7 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
         public void Remove_OneString_CountReduction()
         {
             //Arrange
@@ -198,6 +200,7 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
         public void Expected_IntValueAt_IndexRemove_Location()
         {
             //Arrange
@@ -218,6 +221,7 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Expected_StringValueAt_IndexRemove_Location()
         {
             //Arrange
@@ -237,6 +241,7 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Remove_Nonexistent_Int()
         {
             //Arrange
@@ -263,6 +268,7 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
         public void Expected_ListCapacity_of_5_Object_List()
         {
             //Arrange

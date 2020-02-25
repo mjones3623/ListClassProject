@@ -82,6 +82,29 @@ namespace MyListClassProject
         public void Remove(T item)
         {
             
+            T[] tempArray = new T[capacity];
+            for (int i = 0; i <= count - 1; i++)
+            {
+                if (!array[i].Equals(item))
+                {
+                    tempArray[i] = array[i];
+                }
+                
+                else if (array[i].Equals(item))
+                {
+                        i++;  
+                                        
+                    for (int j = i; j <= count -1; j++)
+                    {
+                        tempArray[j-1] = array[j];
+                    }
+                    count--;
+                }
+               
+
+            }
+            
+            array = tempArray;
 
         }
 
