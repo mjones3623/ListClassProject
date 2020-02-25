@@ -24,6 +24,7 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
                                    
         }
+        [TestMethod]
         public void Add_OneString_CountIncrement()
         {
             //Arrange
@@ -40,6 +41,7 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
         public void Expected_IntValueAt_IndexAdd_Location()
         {
             //Arrange
@@ -53,20 +55,24 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Expected_StringValueAt_IndexAdd_Location()
         {
             //Arrange
             CustomList<string> myList = new CustomList<string>();
+            string word = "word";
             string expected = "word";
             string actual;
 
             //Act
+            myList.Add(word);
             actual = myList[0];
-            myList.Add(expected);
+            
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Expected_LocationOf_AddedInt()
         {
             //Arrange
@@ -83,6 +89,7 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Expected_LocationOf_AddedString()
         {
             //Arrange
@@ -99,6 +106,7 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Location_Of_Fifth_Added_Value()
         {
             //Arrange
@@ -124,6 +132,7 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Location_Of_3rd_Of_FiveAddedValues()
         {
             //Arrange

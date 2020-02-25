@@ -62,31 +62,21 @@ namespace MyListClassProject
         //Methods
         public void Add(T item)
         {
-            if(capacity > count)
+            
+            if(capacity == count)
             {
-                array[count] = item;
-                count++;
-                capacity--;
-            }
-            else if(capacity == count)
-            {
-                T[] tempArray = new T[count + 4];
+                capacity *= 2;
+                T[] tempArray = new T[capacity];
                 for (int i = 0; i < count -1; i++)
                 {
                     tempArray[i] = array[i];
 
                 }
-                                
-                for (int i = 0; i < count -1; i++)
-                {
-                    array[i] = tempArray[i];
+                array = tempArray;
 
-                }
-                
-                array[count + 1] = item;
-                count++;
-                capacity = capacity + 3;
             }
+            array[count] = item;
+            count++;
 
         }
         public void Remove(T item)

@@ -10,13 +10,18 @@ namespace MyListClassProject
     {
         static void Main(string[] args)
         {
-            List<int> numbers = new List<int>();
-            CustomList<int> numbers2 = new CustomList<int>();
+            
+            
+            
+            
+            
+            //List<int> numbers = new List<int>();
+            //CustomList<int> numbers2 = new CustomList<int>();
 
-            Console.WriteLine(numbers[8]);
-            Console.WriteLine(numbers.Count);
+            //Console.WriteLine(numbers[8]);
+            //Console.WriteLine(numbers.Count);
 
-            Console.WriteLine(numbers2[0]);
+            //Console.WriteLine(numbers2[0]);
 
         }
     }
