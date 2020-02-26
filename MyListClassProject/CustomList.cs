@@ -107,6 +107,20 @@ namespace MyListClassProject
             array = tempArray;
 
         }
+        public string ConvertToString(T[] arrayToString)
+        {
+
+            string listString = "";
+            
+            for (int i = 0; i < count; i++)
+            {
+                listString += (arrayToString[i].ToString()+",");
+                
+            }
+
+            return listString;
+            
+        }
 
     }
 }
