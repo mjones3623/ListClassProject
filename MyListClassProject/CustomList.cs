@@ -9,9 +9,10 @@ namespace MyListClassProject
     public class CustomList<T>
     {
         //Variables
-
+        
 
         T[] array = new T[4];
+
         private int count;
         private int capacity;
         private int index;
@@ -122,8 +123,27 @@ namespace MyListClassProject
             return listString;
             
         }
-        
-        
+                
+        public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T>  listTwo)
+        {
+            CustomList<T> listResult = new CustomList<T>();
+            
+            for (int i = 0; i < listOne.Count; i++)
+            {
+                listResult.Add(listOne[i]);
+            }
+            for (int i = 0; i < listTwo.Count; i++)
+            {
+                listResult.Add(listTwo[i]);
+            }
+
+
+            return listResult;
+
+
+        }
+
+
 
     }
 }
