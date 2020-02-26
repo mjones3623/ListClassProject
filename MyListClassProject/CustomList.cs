@@ -62,6 +62,8 @@ namespace MyListClassProject
                
         
         //Methods
+
+        //Add method for custom list class
         public void Add(T item)
         {
             
@@ -81,6 +83,7 @@ namespace MyListClassProject
             count++;
 
         }
+        //Remove method for custom list class
         public void Remove(T item)
         {
             
@@ -109,7 +112,7 @@ namespace MyListClassProject
             array = tempArray;
 
         }
-       
+        //Overriding ToString Method
         public override string ToString()
         {
             listString = "";
@@ -123,7 +126,7 @@ namespace MyListClassProject
             return listString;
             
         }
-                
+         //Overload the + operator method       
         public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T>  listTwo)
         {
             CustomList<T> listResult = new CustomList<T>();
@@ -139,6 +142,28 @@ namespace MyListClassProject
 
 
             return listResult;
+
+
+        }
+        //Overload the - operator method       
+        public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> listResult = new CustomList<T>();
+            
+            for (int i = 0; i < listOne.Count; i++)
+            {
+                for (int j = 0; j < listTwo.Count; j++)
+                {
+                    if (listOne[i].Equals(listTwo[j]))
+                    {
+                        listOne.Remove(listOne[i]);
+                        listTwo.Remove(listTwo[j]);
+                        
+                    }
+                }
+
+            }
+            return listOne;
 
 
         }
