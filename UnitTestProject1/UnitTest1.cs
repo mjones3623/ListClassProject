@@ -294,7 +294,72 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Adding_5_Numbers_To_List_Placement()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int one = 1;
+            int two = 2;
+            int three = 3;
+            int four = 4;
+            int five = 5;
 
+            int expected1 = 1;
+            int expected2 = 2;
+            int expected3 = 3;
+            int expected4 = 4;
+            int expected5 = 5;
+
+            //Act
+            myList.Add(one);
+            myList.Add(two);
+            myList.Add(three);
+            myList.Add(four);
+            myList.Add(five);
+
+            int actual1 = myList[0];
+            int actual2 = myList[1];
+            int actual3 = myList[2];
+            int actual4 = myList[3];
+            int actual5 = myList[4];
+
+            //Assert
+            Assert.AreEqual(expected1, actual1);
+            Assert.AreEqual(expected2, actual2);
+            Assert.AreEqual(expected3, actual3);
+            Assert.AreEqual(expected4, actual4);
+            Assert.AreEqual(expected5, actual5);
+
+
+        }
+        //Override ToString Method Unit Test////////////////////////
+        [TestMethod]
+        public void ToString()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int number1 = 1;
+            int number2 = 2;
+            int number3 = 3;
+            int number4 = 4;
+            int number5 = 5;
+            string expected = "12345";
+            string actual;
+
+            //Act
+            myList.Add(number1);
+            myList.Add(number2);
+            myList.Add(number3);
+            myList.Add(number4);
+            myList.Add(number5);
+            actual = myList.ToString(); 
+
+                        
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
 
 
     }

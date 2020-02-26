@@ -15,6 +15,7 @@ namespace MyListClassProject
         private int count;
         private int capacity;
         private int index;
+        string listString;
         
 
         public int Count
@@ -67,7 +68,7 @@ namespace MyListClassProject
             {
                 capacity *= 2;
                 T[] tempArray = new T[capacity];
-                for (int i = 0; i < count -1; i++)
+                for (int i = 0; i < count; i++)
                 {
                     tempArray[i] = array[i];
 
@@ -107,20 +108,22 @@ namespace MyListClassProject
             array = tempArray;
 
         }
-        public string ConvertToString(T[] arrayToString)
+       
+        public override string ToString()
         {
+            listString = "";
 
-            string listString = "";
-            
             for (int i = 0; i < count; i++)
             {
-                listString += (arrayToString[i].ToString()+",");
-                
-            }
+                listString += (array[i].ToString());
 
+            }
+            
             return listString;
             
         }
+        
+        
 
     }
 }
