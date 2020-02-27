@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace MyListClassProject
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         //Variables
+        
         
 
         T[] array = new T[4];
@@ -17,6 +19,9 @@ namespace MyListClassProject
         private int capacity;
         private int index;
         string listString;
+
+        
+        
         
 
         public int Count
@@ -34,18 +39,38 @@ namespace MyListClassProject
             }
             set
             {
+
                 capacity = value;
             }
         }
         public T this [int i]
         {
+            // if outside of active range...
+            // throw your own exception (ArgumentOutOfRangeException)
             get
             {
-                return array[i];
+                if(array[i] < 0 || array[i] > count)
+                {
+                    throw new System.IndexOutOfRangeException();
+                }
+                else if
+                {
+                    return array[i];
+                }
+                
+                
             }
             set
             {
-                array[i] = value;
+                if (array[i] < 0 || array[i] > count)
+                {
+                    throw new System.IndexOutOfRangeException();
+                }
+                else if
+                {
+                    array[i] = value;
+                }
+                
             }
         }
 
@@ -56,6 +81,8 @@ namespace MyListClassProject
         {
             count = 0;
             capacity = 4;
+
+            
             
         }
 
@@ -172,38 +199,55 @@ namespace MyListClassProject
         public CustomList<T> ZipTowCustomListInstances(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> listResult = new CustomList<T>();
-            
 
-            for (int i = 0; i < listOne.count; i++)
+            int listOneCountLarger = listOne.Count - listTwo.Count;
+            int listTwoCountLarger = listTwo.Count - listOne.Count;
+
+            if (listOne.count == listTwo.count)                    //If list lengths are equal
             {
-                listResult.Add(listOne[i]);
-                listResult.Add(listTwo[i]);
+                for (int i = 0; i < listOne.Count; i++)
+                {
+                    listResult.Add(listOne[i]);
+                    listResult.Add(listTwo[i]);
+                }
 
-                if(listOne.count == i && listTwo.count == i)
-                {
-                    
-                    break;
-                }
-                else if (listOne.Count == i && listTwo.Count > i)
-                {
-                    for (int j = 0; j < listTwo.Count; j++)
-                    {
-                        listResult.Add(listTwo[i]);
-                    }
-                }
-                else if(listOne.count > i && listTwo.Count == i)
-                {
-                    for (int k = 0; k < listOne.Count; k++)
-                    {
-                        listResult.Add(listOne[i]);
-                    }
-                }
             }
-              return listResult;
-            
+            else if (listOneCountLarger > 0)                       //If list One is larger  
+            {
+                for (int j = 0; j <= listTwo.Count-1; j++)
+                {
+                    listResult.Add(listOne[j]);
+                    listResult.Add(listTwo[j]);
+                }
+                for (int k = listTwo.Count; k < listOne.Count; k++)
+                {
+                    listResult.Add(listOne[k]);
+                }
+
+            }
+            else if (listTwoCountLarger > 0)                        //If list Two is larger
+            {
+                for (int k = 0; k <= listOne.Count-1; k++)
+                {
+                    listResult.Add(listOne[k]);
+                    listResult.Add(listTwo[k]);
+                }
+                for (int l = listOne.Count; l < listTwo.Count; l++)
+                {
+                    listResult.Add(listTwo[l]);
+                }
+                
+            }
+            return listResult;
+
         }
 
-
-
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                yield return array[i];
+            }
+        }
     }
 }

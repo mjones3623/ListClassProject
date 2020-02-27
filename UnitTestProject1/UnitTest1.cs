@@ -442,7 +442,7 @@ namespace UnitTestProject1
         }
         [TestMethod]
         //Zip Two Custom List Instances Unit Test
-        public CustomList<T> Zip_Test(CustomList<T> list1, CustomList<T> list2)
+        public void Zip_Test_Lists_Same_Length()
         {
             //Arrange
             CustomList<int> myList1 = new CustomList<int>();
@@ -462,12 +462,129 @@ namespace UnitTestProject1
             myList1.Add(number1);
             myList1.Add(number2);
             myList1.Add(number3);
+
             myList2.Add(number4);
             myList2.Add(number5);
             myList2.Add(number6);
 
-           
-            actual = ZipTowCustomListInstances();
+            myList3.Add(number1);
+            myList3.Add(number4);
+            myList3.Add(number2);
+            myList3.Add(number5);
+            myList3.Add(number3);
+            myList3.Add(number6);
+
+
+
+            actual = myList1.ZipTowCustomListInstances(myList1, myList2);
+
+            CustomList<int> expected = myList3;
+
+            //Assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+
+        }
+        [TestMethod]
+        
+        public void Zip_Test_Lists_Different_Length()
+        {
+            //Arrange
+            CustomList<int> myList1 = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            CustomList<int> myList3 = new CustomList<int>();
+
+            int number1 = 1;
+            int number2 = 3;
+            int number3 = 5;
+            int number4 = 2;
+            int number5 = 4;
+            int number6 = 6;
+            int number7 = 7;
+            int number8 = 7;
+            int number9 = 7;
+
+            CustomList<int> actual;
+
+            //Act
+            myList1.Add(number1);
+            myList1.Add(number2);
+            myList1.Add(number3);
+            
+
+            myList2.Add(number4);
+            myList2.Add(number5);
+            myList2.Add(number6);
+            myList2.Add(number7);
+            myList2.Add(number8);
+            myList2.Add(number9);
+
+            myList3.Add(number1);
+            myList3.Add(number4);
+            myList3.Add(number2);
+            myList3.Add(number5);
+            myList3.Add(number3);
+            myList3.Add(number6);
+            myList3.Add(number7);
+            myList3.Add(number8);
+            myList3.Add(number9);
+
+
+
+            actual = myList1.ZipTowCustomListInstances(myList1, myList2);
+
+            CustomList<int> expected = myList3;
+
+            //Assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+
+        }
+        [TestMethod]
+
+        public void Zip_Test_Lists_Different_Length_2()
+        {
+            //Arrange
+            CustomList<int> myList1 = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            CustomList<int> myList3 = new CustomList<int>();
+
+            int number1 = 1;
+            int number2 = 3;
+            int number3 = 5;
+            int number4 = 2;
+            int number5 = 4;
+            int number6 = 6;
+            int number7 = 7;
+            int number8 = 7;
+            int number9 = 7;
+
+            CustomList<int> actual;
+
+            //Act
+            myList2.Add(number4);
+            myList2.Add(number5);
+            myList2.Add(number6);
+
+
+            myList1.Add(number1);
+            myList1.Add(number2);
+            myList1.Add(number3);
+            myList1.Add(number7);
+            myList1.Add(number8);
+            myList1.Add(number9);
+
+            myList3.Add(number1);
+            myList3.Add(number4);
+            myList3.Add(number2);
+            myList3.Add(number5);
+            myList3.Add(number3);
+            myList3.Add(number6);
+            myList3.Add(number7);
+            myList3.Add(number8);
+            myList3.Add(number9);
+
+
+
+            actual = myList1.ZipTowCustomListInstances(myList1, myList2);
 
             CustomList<int> expected = myList3;
 
@@ -476,6 +593,6 @@ namespace UnitTestProject1
 
         }
 
-       
+
     }
 }

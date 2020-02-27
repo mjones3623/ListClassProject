@@ -26,6 +26,8 @@ namespace MyListClassProject
             numbers2.Add(4);
             numbers2.Add(5);
 
+            Console.WriteLine(numbers2[7]);
+
             string ListAsNumbers = numbers2.ToString();
             
            // numbers2.ConvertToString(numbers2);
