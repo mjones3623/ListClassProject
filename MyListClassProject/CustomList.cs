@@ -167,6 +167,41 @@ namespace MyListClassProject
 
 
         }
+        //Zip two custom list class instances
+        //listOne includes the index the user wants to begin with
+        public CustomList<T> ZipTowCustomListInstances(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> listResult = new CustomList<T>();
+            
+
+            for (int i = 0; i < listOne.count; i++)
+            {
+                listResult.Add(listOne[i]);
+                listResult.Add(listTwo[i]);
+
+                if(listOne.count == i && listTwo.count == i)
+                {
+                    
+                    break;
+                }
+                else if (listOne.Count == i && listTwo.Count > i)
+                {
+                    for (int j = 0; j < listTwo.Count; j++)
+                    {
+                        listResult.Add(listTwo[i]);
+                    }
+                }
+                else if(listOne.count > i && listTwo.Count == i)
+                {
+                    for (int k = 0; k < listOne.Count; k++)
+                    {
+                        listResult.Add(listOne[i]);
+                    }
+                }
+            }
+              return listResult;
+            
+        }
 
 
 

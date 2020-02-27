@@ -440,7 +440,42 @@ namespace UnitTestProject1
             Assert.AreEqual(expected.ToString(), actual.ToString());
 
         }
+        [TestMethod]
+        //Zip Two Custom List Instances Unit Test
+        public CustomList<T> Zip_Test(CustomList<T> list1, CustomList<T> list2)
+        {
+            //Arrange
+            CustomList<int> myList1 = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            CustomList<int> myList3 = new CustomList<int>();
 
+            int number1 = 1;
+            int number2 = 3;
+            int number3 = 5;
+            int number4 = 2;
+            int number5 = 4;
+            int number6 = 6;
 
+            CustomList<int> actual;
+
+            //Act
+            myList1.Add(number1);
+            myList1.Add(number2);
+            myList1.Add(number3);
+            myList2.Add(number4);
+            myList2.Add(number5);
+            myList2.Add(number6);
+
+           
+            actual = ZipTowCustomListInstances();
+
+            CustomList<int> expected = myList3;
+
+            //Assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+
+        }
+
+       
     }
 }
