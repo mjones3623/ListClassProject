@@ -10,32 +10,28 @@ namespace MyListClassProject
     {
         static void Main(string[] args)
         {
+            CustomList<int> result;
+
+            CustomList<int> myList1 = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
 
 
+            myList1.Add(1);
+            myList1.Add(3);
+            myList1.Add(5);
 
+            myList2.Add(2);
+            myList2.Add(1);
+            myList2.Add(6);
 
+            result = myList1 - myList2;
 
-            //List<int> numbers = new List<int>();
+            Console.WriteLine(result.ToString());
+            Console.ReadLine();
 
-
-
-            CustomList<int> numbers2 = new CustomList<int>();
-            numbers2.Add(1);
-            numbers2.Add(2);
-            numbers2.Add(3);
-            numbers2.Add(4);
-            numbers2.Add(5);
-
-            Console.WriteLine(numbers2[7]);
-
-            string ListAsNumbers = numbers2.ToString();
             
-           // numbers2.ConvertToString(numbers2);
 
-            //Console.WriteLine(numbers[8]);
-            //Console.WriteLine(numbers.Count);
 
-            //Console.WriteLine(numbers2[0]);
 
         }
     }

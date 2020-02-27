@@ -49,11 +49,11 @@ namespace MyListClassProject
             // throw your own exception (ArgumentOutOfRangeException)
             get
             {
-                if(array[i] < 0 || array[i] > count)
+                if(i < 0 || i > count)
                 {
                     throw new System.IndexOutOfRangeException();
                 }
-                else if
+                else
                 {
                     return array[i];
                 }
@@ -62,11 +62,11 @@ namespace MyListClassProject
             }
             set
             {
-                if (array[i] < 0 || array[i] > count)
+                if (i < 0 || i > count)
                 {
                     throw new System.IndexOutOfRangeException();
                 }
-                else if
+                else
                 {
                     array[i] = value;
                 }
