@@ -1,0 +1,40 @@
+Minus Operator Documentation
+Parameters
+CustomList<T> listOne, CustomList<T> listTwo
+Returns
+CustomList<T> listOne
+Implements
+Facilitates the subtraction of one instance of a custom list class from another instance of a custom list class, leaving listOne void of common elements present in listTwo (subtracting listTwo from listOne).  The method compares elements of listOne, one at a time via a for each loop, to each element in list two.  Where it finds a match both elements are eliminated from each list, thusly eliminating the possibility of eliminating multiple elements from listTwo (for instance, if there is only one “2” in listOne and multiple  “2”s in listTwo, only one will be eliminated from each list) should they exist.
+Example
+
+namespace MyListClassProject
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            CustomList<int> result;
+
+            CustomList<int> myList1 = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+
+
+            myList1.Add(1);
+            myList1.Add(3);
+            myList1.Add(5);
+
+            myList2.Add(2);
+            myList2.Add(1);
+            myList2.Add(6);
+
+            result = myList1 - myList2;  //Syntax for use in this example
+
+            Console.WriteLine(result.ToString());
+            Console.ReadLine();
+
+            //Result = 35 This is written in the Console 
+        }
+    }
+}
+
+

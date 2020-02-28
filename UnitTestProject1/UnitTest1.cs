@@ -181,7 +181,7 @@ namespace UnitTestProject1
 
         }
 
-[TestMethod]
+        [TestMethod]
         public void Remove_OneInt_placement()
         {
             //Arrange

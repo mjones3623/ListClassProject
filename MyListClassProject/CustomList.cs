@@ -22,7 +22,7 @@ namespace MyListClassProject
 
         
         
-        
+        //Count property, Capacity property and Indexer
 
         public int Count
         {
@@ -45,8 +45,7 @@ namespace MyListClassProject
         }
         public T this [int i]
         {
-            // if outside of active range...
-            // throw your own exception (ArgumentOutOfRangeException)
+            
             get
             {
                 if(i < 0 || i > count)
@@ -201,7 +200,7 @@ namespace MyListClassProject
                                           
         }
         //Zip two custom list class instances
-        //listOne includes the index the user wants to begin with
+        //listOne includes the index that contains the first index postion the user wants to begin with
         public CustomList<T> ZipTowCustomListInstances(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> listResult = new CustomList<T>();
