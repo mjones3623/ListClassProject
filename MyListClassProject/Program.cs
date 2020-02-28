@@ -30,9 +30,6 @@ namespace MyListClassProject
             Console.ReadLine();
 
             
-
-
-
         }
     }
 }

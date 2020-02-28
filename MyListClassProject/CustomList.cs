@@ -115,7 +115,7 @@ namespace MyListClassProject
         {
             
             T[] tempArray = new T[capacity];
-            for (int i = 0; i <= count - 1; i++)
+            for (int i = 0; i <= count-1; i++)
             {
                 if (!array[i].Equals(item))
                 {
@@ -124,13 +124,15 @@ namespace MyListClassProject
                 
                 else if (array[i].Equals(item))
                 {
-                        i++;  
-                                        
-                    for (int j = i; j <= count -1; j++)
+                    i++;
+
+                    for (int j = i; j <= count-1; j++)
                     {
-                        tempArray[j-1] = array[j];
+                        tempArray[j - 1] = array[j];
                     }
                     count--;
+                    break;
+                    
                 }
                
 
@@ -175,22 +177,45 @@ namespace MyListClassProject
         //Overload the - operator method       
         public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
         {
-            CustomList<T> listResult = new CustomList<T>();
-            
-            for (int i = 0; i < listOne.Count; i++)
+            int k = 0;
+            foreach(int i in listOne)
             {
                 for (int j = 0; j < listTwo.Count; j++)
                 {
-                    if (listOne[i].Equals(listTwo[j]))
+                    if (listOne[k].Equals(listTwo[j]))
                     {
-                        listOne.Remove(listOne[i]);
+                        listOne.Remove(listOne[k]);
                         listTwo.Remove(listTwo[j]);
-                        
+                        k++;
+                        break;
                     }
                 }
-
             }
             return listOne;
+
+
+
+
+
+
+
+
+
+            
+            //for (int i = 0; i < listOne.Count; i++)
+            //{
+            //    for (int j = 0; j < listTwo.Count; j++)
+            //    {
+            //        if (listOne[i].Equals(listTwo[j]))
+            //        {
+            //            listOne.Remove(listOne[i]);
+            //            listTwo.Remove(listTwo[j]);
+                        
+            //        }
+            //    }
+
+            //}
+            //return listOne;
 
 
         }
