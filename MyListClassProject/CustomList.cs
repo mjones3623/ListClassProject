@@ -189,35 +189,16 @@ namespace MyListClassProject
                         k++;
                         break;
                     }
+                    else if(j == (listTwo.Count -1))
+                    {
+                        k++;
+                        break;
+                    }
                 }
             }
             return listOne;
 
-
-
-
-
-
-
-
-
-            
-            //for (int i = 0; i < listOne.Count; i++)
-            //{
-            //    for (int j = 0; j < listTwo.Count; j++)
-            //    {
-            //        if (listOne[i].Equals(listTwo[j]))
-            //        {
-            //            listOne.Remove(listOne[i]);
-            //            listTwo.Remove(listTwo[j]);
-                        
-            //        }
-            //    }
-
-            //}
-            //return listOne;
-
-
+                                          
         }
         //Zip two custom list class instances
         //listOne includes the index the user wants to begin with

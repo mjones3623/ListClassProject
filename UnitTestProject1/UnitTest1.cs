@@ -414,6 +414,7 @@ namespace UnitTestProject1
             myList1.Add(number1);
             myList1.Add(number2);
             myList1.Add(number3);
+
             myList2.Add(number4);
             myList2.Add(number5);
             myList2.Add(number6);
@@ -436,7 +437,7 @@ namespace UnitTestProject1
         }
         [TestMethod]
         //Overload the - operator unit test
-        public void Minus_Operator_Test_Add_2Lists()
+        public void Minus_Operator_Test_Add_1()
         {
             //Arrange
             CustomList<int> myList1 = new CustomList<int>();
@@ -519,7 +520,53 @@ namespace UnitTestProject1
 
         }
 
-                                   
+        [TestMethod]
+        //Overload the - operator unit test
+        public void Minus_Operator_Test_3()
+        {
+            //Arrange
+            CustomList<int> myList1 = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            CustomList<int> myList3 = new CustomList<int>();
+
+            int number1 = 1;
+            int number2 = 2;
+            int number3 = 3;
+            int number4 = 4;
+            int number5 = 5;
+            int number6 = 6;
+            int number7 = 7;
+
+            CustomList<int> actual;
+
+            //Act
+            myList1.Add(number2);
+            myList1.Add(number4);
+            myList1.Add(number7);
+            myList1.Add(number4);
+            myList1.Add(number5);
+
+            myList2.Add(number4);
+            myList2.Add(number5);
+            myList2.Add(number6);
+            myList2.Add(number3);
+
+            myList3.Add(number2);
+            myList3.Add(number7);
+            myList3.Add(number4);
+
+
+
+            actual = myList1 - myList2;
+
+            CustomList<int> expected = myList3;
+
+            //Assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+
+        }
+
+
         [TestMethod]
         //Zip Two Custom List Instances Unit Test
         public void Zip_Test_Lists_Same_Length()  //testing example in user stories
